@@ -25,7 +25,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const getProductData = () => {
-    axios.get(`https://json-mock-server-rajatsahu18.vercel.app/himalaya`)
+    axios.get(`https://json-mock-server-rajatsahu18.vercel.app/organic`)
       .then((res) => {
         setProducts(res.data)
       })
@@ -82,7 +82,7 @@ const Navbar = () => {
   console.log("sugesion", suggestions);
   return (
     <>
-      <Box position='fixed' w='100%' top='0' zIndex='10000'>
+      <Box position='fixed' w='100%' top='0' zIndex='10000' >
         <Box display='flex' bg='#A6CE3A' h='4rem' color='#fff' pt='1rem'>
             <marquee>
               <Text textAlign='center'>{Texts.USE_CODE_HIMALAYA}</Text>
@@ -108,7 +108,7 @@ const Navbar = () => {
                 onMouseEnter={onOpen}
                 onMouseLeave={onClose}
               >
-                {Texts.SHOP}
+                <Text color='#00AFEF'>{Texts.SHOP}</Text>
               </MenuButton>
               <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}  
                 width="70rem"
@@ -168,17 +168,17 @@ const Navbar = () => {
               </MenuList>
             </Menu>
             <Link to='/himalaya'>
-              <Text>{Texts.HIMALAYA}</Text>
+              <Text color='#00AFEF'>{Texts.HIMALAYA}</Text>
             </Link>
             <Link to='/mamaearth'>
-              <Text>{Texts.MAMAEARTH}</Text>
+              <Text color='#00AFEF'>{Texts.MAMAEARTH}</Text>
             </Link>
             <Link to='/about'>
-              <Text>{Texts.ABOUT}</Text>
+              <Text color='#00AFEF'>{Texts.ABOUT}</Text>
             </Link>
             <Spacer />
             <Link to="/"> {currentUser ? 
-            <Text>{
+            <Text color='#00AFEF'>{
               currentUser.displayName
             }
           
@@ -186,7 +186,7 @@ const Navbar = () => {
              : ""}</Link>
 
             <Menu>
-              <MenuButton title='search' >
+              <MenuButton title='search' color='#00AFEF' >
                 <Search2Icon />
               </MenuButton>
 
@@ -195,23 +195,18 @@ const Navbar = () => {
                   <Box borderBottom={'1px solid gray'} py={2}>
                     <Flex justifyContent={'space-between'} mb={10} gap={4}>
                       <Text>{Texts.LOOKING_FOR}</Text>
-                        <button onClick={onClose}>
+                        <Button onClick={onClose}>
                           <CloseIcon />
-                        </button>
+                        </Button>
                     </Flex>
                     <Flex justifyContent={'space-between'} gap={4}>
                       <Input
-                        placeholder='Search Products.....'
+                        placeholder='Search'
                         height={'50px'}
                         variant='unstyled'
                         fontSize={'25px'}
                         onChange={handleInputTextChange}
                       />
-                      <Link to='/'>
-                        <Button>
-                          <Search2Icon />
-                        </Button>
-                      </Link>
                     </Flex>
                   </Box>
                 </Box>
@@ -220,7 +215,7 @@ const Navbar = () => {
                   <Box maxHeight='400px' maxWidth={'100vw'} marginRight={'10px'} backgroundColor={'white'} overflowY={'scroll'}>
                     <Flex justifyContent={'space-around'} flexWrap={'wrap'}>
                       {
-                        suggestions.map((product) => (
+                        suggestions?.map((product) => (
                             <Box width={'200px'} px={3} >
                               <Image height={'180px'} width={'150px'} src={product.img} alt='product' />
                               <Text fontSize={'0.9rem'}>{product.name}</Text>
@@ -235,21 +230,21 @@ const Navbar = () => {
               </MenuList>
             </Menu>
             <Menu>
-              <MenuButton title='My Account' >
+              <MenuButton title='My Account' color='#00AFEF' >
                 <BsPersonFill/>
               </MenuButton>
-              <MenuList mt={5} fontSize="16px" bg='#A6CE3A'>
-                <Flex flexDirection={'column'} justifyContent={'center'} px={8} py={5} >
-                  <Link to='/login'><button onClick={handleAuth}><Text color='#fff' fontWeight='800'>{currentUser ? "Logout" : "Sign In"}</Text></button></Link>
-                  <Link to='/registration'><Text color='#fff' fontWeight='800'>{currentUser ? "" : "Register"}</Text ></Link>
-                  <Link to='/checkout'><Text color='#fff' fontWeight='800'>{Texts.CHECKOUT}</Text> </Link>
+              <MenuList mt={5} fontSize="16px" bg='#fff'>
+                <Flex flexDirection='column' justifyContent='center' px={8} py={5} >
+                  <Link to='/login'><button onClick={handleAuth}><Text color='#00AFEF' fontWeight='800'>{currentUser ? "Logout" : "Sign In"}</Text></button></Link>
+                  <Link to='/registration'><Text color='#00AFEF' fontWeight='800'>{currentUser ? "" : "Register"}</Text ></Link>
+                  <Link to='/checkout'><Text color='#00AFEF' fontWeight='800'>{Texts.CHECKOUT}</Text> </Link>
                 </Flex>
               </MenuList>
             </Menu>
             <Menu>
               <MenuButton title='Cart' >
               <Flex fontSize={'20px'}>
-                <Box><BsHandbag /></Box>
+                <Box color='#00AFEF'><BsHandbag /></Box>
                 <Box height={'20px'} width={'20px'} >
                   <sup 
                   style=
