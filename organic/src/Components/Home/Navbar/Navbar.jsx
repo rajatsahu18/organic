@@ -11,7 +11,7 @@ import {
   MenuList,
   MenuItem,
 } from '@chakra-ui/react'
-import { BsHandbag } from 'react-icons/bs'
+import { BsHandbag, BsPersonFill } from 'react-icons/bs'
 import axios from 'axios';
 import { Texts } from '../../../Common/constants';
 
@@ -208,9 +208,9 @@ const Navbar = () => {
                         onChange={handleInputTextChange}
                       />
                       <Link to='/'>
-                        <button>
+                        <Button>
                           <Search2Icon />
-                        </button>
+                        </Button>
                       </Link>
                     </Flex>
                   </Box>
@@ -236,7 +236,7 @@ const Navbar = () => {
             </Menu>
             <Menu>
               <MenuButton title='My Account' >
-                <i class="fa-regular fa-user"></i>
+                <BsPersonFill/>
               </MenuButton>
               <MenuList mt={5} fontSize="16px" bg='#A6CE3A'>
                 <Flex flexDirection={'column'} justifyContent={'center'} px={8} py={5} >
