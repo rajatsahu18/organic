@@ -25,7 +25,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const getProductData = () => {
-    axios.get(`https://json-mock-server-rajatsahu18.vercel.app/`)
+    axios.get(`https://json-mock-server-rajatsahu18.vercel.app/himalaya`)
       .then((res) => {
         setProducts(res.data)
       })
@@ -49,7 +49,7 @@ const Navbar = () => {
       setSuggestions([])
     } else {
       let newProductsSuggestions = products.filter(item => {
-        return item.Name.toLowerCase().indexOf(query) !== -1 ? true : false;
+        return item.name.toLowerCase().indexOf(query) !== -1 ? true : false;
       }).map((item) => {
         return (item)
       });
@@ -63,7 +63,7 @@ const Navbar = () => {
 
   let total_price = 0;
         for( let i = 0; i < cartData.length; i++ ) {
-            total_price += (cartData[i].Price * cartData[i].count);
+            total_price += (cartData[i].price * cartData[i].count);
         }
   
   const getCartData = () =>{
@@ -217,13 +217,13 @@ const Navbar = () => {
                 </Box>
                 {
                   suggestions ?
-                  <Box maxHeight={'400px'} maxWidth={'100vw'} marginRight={'10px'} backgroundColor={'white'} overflowY={'scroll'}>
+                  <Box maxHeight='400px' maxWidth={'100vw'} marginRight={'10px'} backgroundColor={'white'} overflowY={'scroll'}>
                     <Flex justifyContent={'space-around'} flexWrap={'wrap'}>
                       {
                         suggestions.map((product) => (
                             <Box width={'200px'} px={3} >
-                              <Image height={'180px'} width={'150px'} src={product.Img} alt='product' />
-                              <Text fontSize={'0.9rem'}>{product.Name}</Text>
+                              <Image height={'180px'} width={'150px'} src={product.img} alt='product' />
+                              <Text fontSize={'0.9rem'}>{product.name}</Text>
                             </Box>
                         ))
                       }
@@ -301,7 +301,7 @@ const Navbar = () => {
                     height={'80px'} 
                     width={'80px'}>
                       <Image 
-                      src={item.Img} 
+                      src={item.img} 
                       alt='item_img' 
                       height={'100%'} 
                       width={'100%'}
@@ -309,7 +309,7 @@ const Navbar = () => {
                       </Box>
                     <Box width={'300px'} ml={'1rem'}>
                       <Flex flexDirection={'column'}>
-                        <Box>{item.Name}</Box>
+                        <Box>{item.name}</Box>
                         <Box>{item.count} 
                         <span 
                         style=
@@ -318,7 +318,7 @@ const Navbar = () => {
                           marginLeft: '3px'
                         }}
                         >
-                          <CloseIcon/></span>₹ {item.Price}</Box>
+                          <CloseIcon/></span>₹ {item.price}</Box>
                       </Flex>
                     </Box>
                   </Flex>
