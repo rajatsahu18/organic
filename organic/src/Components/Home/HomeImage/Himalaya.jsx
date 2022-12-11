@@ -5,7 +5,7 @@ import { Texts } from "../../../Common/constants";
 
 const Himalaya=()=>{
     return(
-        <Box w='100%' objectFit='cover' mt='2.6rem'>
+        <Box w='100%' objectFit='cover'>
             <Box className='himalaya'>
                 <Heading pt='14%' pl='10%'>
                     <Text fontSize='3rem' color='#000' >{Texts.ASHWAGANDHA}</Text>
