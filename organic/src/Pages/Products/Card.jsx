@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { ShowMore } from "../../Common/ShowMore";
 
-const RightDivShop = (props) => {
+const Card = (props) => {
   const warning = () => toast.warning("Item already present in Bag");
   const success = () => toast.success("Item Added to Bag");
   const [visible, setVisible] = React.useState(15)
@@ -77,4 +77,4 @@ const RightDivShop = (props) => {
   );
 };
 
-export default RightDivShop;
+export default Card;

@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import RightDivShop from "../RightDivShop";
+import Card from "../Card";
 import { useSelector, useDispatch } from "react-redux";
 import { getHimalaya, getHimalayaData } from "../../../Redux/AppReducer/action";
 import { Texts } from "../../../Common/constants";
@@ -71,7 +71,7 @@ const Himalaya = () => {
           <Filter queryData={queryData} />
         </Box>
         <Box className="right_div">
-          <RightDivShop data={filterArray} />
+          <Card data={filterArray} />
         </Box>
       </Box>
     </Box>
