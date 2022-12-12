@@ -140,6 +140,7 @@ export const Texts = {
     'HALDI_UPTAN':'Haldi Uptan',
     'BODY_WASH':'Body Wash',
     'PERFUME':'Perfume',
+    'HOME': 'Home'
 }
 
 

@@ -41,7 +41,7 @@ const Himalaya = () => {
         <Image src='https://i.shgcdn.com/3e8794b1-72dc-43ee-ad39-09cf5c44269b/-/format/auto/-/preview/3000x3000/-/quality/lighter/' alt='cover'
         height={'30rem'}
         width={'100%'}
-        mt='11.2rem'
+        mt='13rem'
         />
       </Box>
       <Box>

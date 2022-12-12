@@ -41,7 +41,7 @@ const Mamaearth = () => {
         <Image src='https://images.ctfassets.net/66mrrren2unf/5bheI8C148KnbBZDn9yQas/df3e25da13502be5d2b3884ce13a2dc5/desktop.jpg?q=40' alt='logo'
         height={'100%'}
         width={'100%'}
-        mt='11.2rem'
+        mt='13rem'
         />
       </Box>
       <Box>
